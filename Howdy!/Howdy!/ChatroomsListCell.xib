@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="ChatroomsListCell" customModule="Howdy_" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sd-2018-sport-cat-ski-mob" translatesAutoresizingMaskIntoConstraints="NO" id="4cJ-fT-Edk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                        <color key="backgroundColor" red="0.2666666667" green="0.73333333329999995" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                    </imageView>
+                    <view alpha="0.23000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IE-RI-Ovx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yZ-kN-zgu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="F8h-l1-3HM">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ6-vB-6PM">
+                        <rect key="frame" x="16" y="18" width="288" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="Izm-L3-Xoq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
+                        <color key="textColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gux-xb-fdx">
+                        <rect key="frame" x="186" y="4" width="100" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="GId-Nl-uTa"/>
+                            <constraint firstAttribute="height" constant="15" id="XXv-W7-0US"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                        <color key="textColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-5" translatesAutoresizingMaskIntoConstraints="NO" id="USo-C8-aeq">
+                        <rect key="frame" x="291" y="5" width="13" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="Kce-hl-NNl"/>
+                            <constraint firstAttribute="width" constant="13" id="WRK-Z2-ljW"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDf-NZ-Dis">
+                        <rect key="frame" x="95" y="64.5" width="130" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="bEs-Y2-hYx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                        <color key="textColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="4cJ-fT-Edk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4ti-Cf-bp5"/>
+                    <constraint firstItem="6yZ-kN-zgu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="EIL-cs-5OP"/>
+                    <constraint firstAttribute="bottom" secondItem="6yZ-kN-zgu" secondAttribute="bottom" id="EcC-0D-eEq"/>
+                    <constraint firstAttribute="trailing" secondItem="3IE-RI-Ovx" secondAttribute="trailing" id="HVn-s3-yDL"/>
+                    <constraint firstAttribute="bottom" secondItem="qDf-NZ-Dis" secondAttribute="bottom" constant="12" id="ItA-IQ-WGm"/>
+                    <constraint firstAttribute="trailing" secondItem="6yZ-kN-zgu" secondAttribute="trailing" id="Pws-my-soT"/>
+                    <constraint firstItem="nZ6-vB-6PM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="SZJ-Mj-Gd7"/>
+                    <constraint firstItem="USo-C8-aeq" firstAttribute="leading" secondItem="gux-xb-fdx" secondAttribute="trailing" constant="5" id="Snb-wY-KRo"/>
+                    <constraint firstAttribute="trailing" secondItem="4cJ-fT-Edk" secondAttribute="trailing" id="UTl-Cy-xbO"/>
+                    <constraint firstAttribute="bottom" secondItem="3IE-RI-Ovx" secondAttribute="bottom" id="VBM-lb-XD0"/>
+                    <constraint firstItem="4cJ-fT-Edk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cBr-l1-XHZ"/>
+                    <constraint firstAttribute="trailing" secondItem="nZ6-vB-6PM" secondAttribute="trailing" constant="16" id="duO-IM-up1"/>
+                    <constraint firstItem="nZ6-vB-6PM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="18" id="eVB-lZ-two"/>
+                    <constraint firstItem="USo-C8-aeq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="h0X-Yz-uuF"/>
+                    <constraint firstAttribute="bottom" secondItem="4cJ-fT-Edk" secondAttribute="bottom" id="kko-JT-p5W"/>
+                    <constraint firstItem="3IE-RI-Ovx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="lZ4-38-d7y"/>
+                    <constraint firstAttribute="trailing" secondItem="USo-C8-aeq" secondAttribute="trailing" constant="16" id="r0e-yr-T0K"/>
+                    <constraint firstItem="6yZ-kN-zgu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rOk-dM-m21"/>
+                    <constraint firstItem="3IE-RI-Ovx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rZX-aO-xbh"/>
+                    <constraint firstItem="qDf-NZ-Dis" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="sl3-jM-frk"/>
+                    <constraint firstItem="USo-C8-aeq" firstAttribute="centerY" secondItem="gux-xb-fdx" secondAttribute="centerY" id="w16-1l-k9U"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryLbl" destination="qDf-NZ-Dis" id="SdE-R4-6wl"/>
+                <outlet property="imageview" destination="4cJ-fT-Edk" id="bUm-KT-K2U"/>
+                <outlet property="nameLbl" destination="nZ6-vB-6PM" id="zzb-m2-C7z"/>
+                <outlet property="populationLbl" destination="gux-xb-fdx" id="9Ez-GD-T1r"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sd-2018-sport-cat-ski-mob" width="372" height="355"/>
+        <image name="user-5" width="64" height="64"/>
+    </resources>
+</document>

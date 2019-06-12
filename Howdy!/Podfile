@@ -1,0 +1,11 @@
+
+platform :ios, '9.0'
+use_frameworks!
+
+target 'Howdy!' do
+
+	pod 'Socket.IO-Client-Swift', '~> 15.0.0'
+	pod 'Alamofire'
+	pod 'SwiftyJSON'
+
+end

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeVC" customModule="Howdy_" customModuleProvider="target">
+            <connections>
+                <outlet property="chatListBtn" destination="Y4G-Jf-BMc" id="NBW-Dl-A5j"/>
+                <outlet property="friendListBtn" destination="69y-Fw-Egf" id="qQZ-qt-Qeq"/>
+                <outlet property="profileBtn" destination="lBO-bH-R4A" id="pKN-Lg-W1Q"/>
+                <outlet property="tableView" destination="JXB-4Y-0e5" id="tpK-ZB-S4C"/>
+                <outlet property="topConstraintToHeaderView" destination="17D-rW-VUB" id="3Kc-mj-aJR"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQX-z2-BJQ">
+                    <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="w9o-XN-azL">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69y-Fw-Egf">
+                                    <rect key="frame" x="0.0" y="0.0" width="111" height="55"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="self.imageView.contentMode">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="friendListBtnPressed:" destination="-1" eventType="touchUpInside" id="tR3-vy-qcr"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4G-Jf-BMc">
+                                    <rect key="frame" x="132" y="0.0" width="111" height="55"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="self.imageView.contentMode">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="chatListBtnPressed:" destination="-1" eventType="touchUpInside" id="PEG-jK-vnJ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBO-bH-R4A">
+                                    <rect key="frame" x="264" y="0.0" width="111" height="55"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="13" maxX="0.0" maxY="13"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="self.imageView.contentMode">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="profileBtnPressed:" destination="-1" eventType="touchUpInside" id="bQc-Qq-klj"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.14901960780000001" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+                    <constraints>
+                        <constraint firstItem="eUg-ls-hTO" firstAttribute="trailing" secondItem="w9o-XN-azL" secondAttribute="trailing" id="Jy3-fm-6GW"/>
+                        <constraint firstItem="eUg-ls-hTO" firstAttribute="bottom" secondItem="w9o-XN-azL" secondAttribute="bottom" id="MTf-k6-ITc"/>
+                        <constraint firstItem="w9o-XN-azL" firstAttribute="top" secondItem="eUg-ls-hTO" secondAttribute="top" id="d7t-O7-MEc"/>
+                        <constraint firstItem="w9o-XN-azL" firstAttribute="leading" secondItem="eUg-ls-hTO" secondAttribute="leading" id="tg1-IN-Bil"/>
+                        <constraint firstAttribute="height" constant="55" id="yXw-dV-6CQ"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="eUg-ls-hTO"/>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JXB-4Y-0e5">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
+            <constraints>
+                <constraint firstItem="JXB-4Y-0e5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="17D-rW-VUB"/>
+                <constraint firstItem="OQX-z2-BJQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1pT-ST-62v"/>
+                <constraint firstItem="OQX-z2-BJQ" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="8MR-oB-G9p"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JXB-4Y-0e5" secondAttribute="trailing" id="Hwn-j2-Kc4"/>
+                <constraint firstItem="OQX-z2-BJQ" firstAttribute="top" secondItem="JXB-4Y-0e5" secondAttribute="bottom" id="Tau-jZ-Cpv"/>
+                <constraint firstItem="JXB-4Y-0e5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e9b-7Y-r4e"/>
+                <constraint firstAttribute="trailing" secondItem="OQX-z2-BJQ" secondAttribute="trailing" id="hY8-tJ-7Dt"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="136.80000000000001" y="107.49625187406298"/>
+        </view>
+    </objects>
+</document>
