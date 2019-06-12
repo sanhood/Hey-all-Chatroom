@@ -15,10 +15,9 @@ class PopoverNotificationVC: UIViewController {
     var chatroom:Chatroom!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.configure()
     }
-    func configure(chatroom:Chatroom){
-        self.chatroom = chatroom
+    func configure(){
         nameLbl.text = chatroom.name
         catLbl.text = chatroom.category
         popLbl.text = "\(chatroom.population!)"
@@ -26,6 +25,8 @@ class PopoverNotificationVC: UIViewController {
     @IBAction func btnPressed(_ sender:UIButton){
         let vc = ChatroomVC(nibName: "ChatroomVC", bundle: nil)
         vc.chatroom = chatroom
-        nvc.pushViewController(vc, animated: true)
+        dismiss(animated: true) {
+            nvc.pushViewController(vc, animated: true)
+        }
     }
 }

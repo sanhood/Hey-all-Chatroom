@@ -14,6 +14,7 @@ class FriendListVC: ParentVC {
     private var _waitingView = WaitingView()
     private var _taskCount = 1
     var inInviteMode = false
+    var chatroomToInvite:Chatroom?
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "FriendListCell", bundle: nil)
@@ -21,6 +22,7 @@ class FriendListVC: ParentVC {
         tableView.tableFooterView = UIView()
         self.view.backgroundColor = UIColor.Heyyo3.firstColor
         headTitle.text = "Friend List"
+        removeTapGesture()
         self.run()
     }
 }
@@ -39,17 +41,19 @@ extension FriendListVC:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         if inInviteMode{
             let user = friendList[indexPath.row]
             if user.status {
                 let alert = UIAlertController(title: "Alert", message: "Do you want to invite your friend to this chatroom?", preferredStyle: .actionSheet)
                 alert.addAction(UIAlertAction(title: "Yep!", style: .default, handler: { _ in
-                    let data = ["id":user.id]
+                    let data:[String:Any] = ["id":user.id,"chatroomID":self.chatroomToInvite!.id,"chatroomName":self.chatroomToInvite!.name,"chatroomCat":self.chatroomToInvite!.category,"chatroomPop":self.chatroomToInvite!.population]
                     AppDelegate.socket.emit("invite", data)
                     let alert = UIAlertController(title: "Alert", message: "Invite has been sent!", preferredStyle: .actionSheet)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                         nvc.popViewController(animated: true)
                     }))
+                    self.present(alert, animated: true, completion: nil)
                 }))
                 alert.addAction(UIAlertAction(title: "Nope!", style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)

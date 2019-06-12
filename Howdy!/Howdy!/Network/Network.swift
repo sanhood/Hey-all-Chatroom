@@ -19,6 +19,7 @@ enum ServerMethod {
     case getChatroomsByName(name:String)
     case getFavList(myID:Int)
     case favUser(leftID:Int,rightID:Int)
+    case join_LeftChatroom(id:Int,isJoined:Bool)
 }
 
 class Network {
@@ -43,6 +44,8 @@ class Network {
             urlRequest = APIRouter.getFavList(myID: myID)
         case .favUser(let leftID, let rightID):
             urlRequest = APIRouter.favUser(leftID: leftID, rightID: rightID)
+        case .join_LeftChatroom(let id, let isJoined):
+            urlRequest = APIRouter.join_LeftChatroom(id: id, isJoined: isJoined)
         }
         
         Alamofire.request(urlRequest).responseJSON { (response) in

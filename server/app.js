@@ -89,7 +89,7 @@ app.get('/getFavList', function (req, res) {
         })
     }, function () {
         //Token doesn't exist ....
-        res.status(500).send()
+        res.status(401).send()
     })
     
 });
@@ -136,7 +136,7 @@ app.get('/getChatroomsByName', function (req, res) {
         }
     }, function () {
         //Token doesn't exist ....
-        res.status(500).send()
+        res.status(401).send()
     })
 });
 
@@ -157,7 +157,7 @@ app.get('/getChatroomsByID', function (req, res) {
             res.status(404).send();
         })
     }, function () {
-        res.status(500).send();
+        res.status(401).send();
     })
 });
 
@@ -174,7 +174,6 @@ app.get('/userInfo/:id', function (req, res) {
         res.status(500).send();
     });
 });
-
 
 app.post('/signup', function (req, res) {
     var body = _.pick(req.body, 'email');
@@ -199,15 +198,14 @@ app.post('/favUser', function (req, res) {
         })
     }, function () {
         //token doesn't exist...
-        res.status(500).send();
+        res.status(401).send();
     })
 });
 
 app.put('/editProfile', function (req, res) {
-    var body = _.pick(req.body, 'nickName', 'bio','firstName','lastName');
+    var body = _.pick(req.body, 'nickName', 'bio','firstName','lastName','status');
     var reqToken = _.pick(req.headers, 'auth');
     var attr = {};
-    console.log(body)
     if (body.hasOwnProperty('nickName')) {
         attr.nickName = body.nickName;
     }
@@ -219,6 +217,9 @@ app.put('/editProfile', function (req, res) {
     }
     if (body.hasOwnProperty('lastName')) {
         attr.lastName = body.lastName;
+    }
+    if (body.hasOwnProperty('status')) {
+        attr.status = body.status;
     }
     db.users.findAll({
         where: {
@@ -237,7 +238,44 @@ app.put('/editProfile', function (req, res) {
             res.status(400).send();
         }
     }, function (err) {
-        res.status(500).send();
+        res.status(401).send();
+    })
+});
+
+app.put('/joinChatroom', function (req, res) {
+    var body = _.pick(req.body, 'id', 'isJoined');
+    var isJoined = body.isJoined
+    var chatroomID = body.id
+    var reqToken = _.pick(req.headers, 'auth').auth;
+    isTokenExist(reqToken).then(function () {
+        //token exists...
+        db.chatrooms.findOne({
+            where: {
+                id: chatroomID
+            }
+        }).then(function (chatroom) {
+            if (chatroom) {
+                json = chatroom.toJSON()
+                if (isJoined) {
+                    json.population = json.population + 1
+                }else{
+                    json.population = json.population - 1
+                }
+                chatroom.update(json).then(function(){
+                    res.status(200).send()
+                },function(err){
+                    res.status(500).send()
+                })
+                
+            } else {
+                res.status(404).send()
+            }
+        }, function (err) {
+            res.status(404).send()
+        })
+    }, function () {
+        //token doesn't exist...
+        res.status(401).send()
     })
 });
 

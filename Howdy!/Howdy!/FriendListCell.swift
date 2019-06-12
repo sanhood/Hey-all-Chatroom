@@ -12,7 +12,6 @@ class FriendListCell: UITableViewCell {
     @IBOutlet weak var nameLbl:UILabel!
     @IBOutlet weak var statusLbl:UILabel!
     @IBOutlet weak var friendImgView:UIImageView!
-    @IBOutlet weak var inviteBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
@@ -29,12 +28,6 @@ class FriendListCell: UITableViewCell {
     func configure(friend:Profile){
         nameLbl.text = friend.nickName
         statusLbl.text = (friend.status) ? "Online" : "Offline"
-        inviteBtn.isHidden = !friend.status
     }
-    
-    @IBAction func invitePressed(_ sender:UIButton){
-        let dict = [String:Any]()
-//        dict["id"] = 
-//        AppDelegate.socket.emit("invite", <#T##items: SocketData...##SocketData#>)
-    }
+
 }

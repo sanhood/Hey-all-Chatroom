@@ -25,7 +25,10 @@ db.users = sequelize.define('Users', {
     lastName: Sequelize.STRING,
     token: Sequelize.STRING,
     bio: Sequelize.TEXT,
-    status: Sequelize.BOOLEAN
+    status: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: 0
+    }
 }, {
     hooks: {
         beforeValidate: function (user, option) {

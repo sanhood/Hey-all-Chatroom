@@ -19,6 +19,7 @@ enum APIRouter : URLRequestConvertible {
     case signup(email:String)
     case favUser(leftID:Int,rightID:Int)
     case editProfile(dictionary:[String:Any])
+    case join_LeftChatroom(id:Int,isJoined:Bool)
     
     private var method: HTTPMethod {
         switch self {
@@ -35,6 +36,8 @@ enum APIRouter : URLRequestConvertible {
         case .favUser:
             return .post
         case .editProfile:
+            return .put
+        case .join_LeftChatroom:
             return .put
         }
     }
@@ -55,6 +58,8 @@ enum APIRouter : URLRequestConvertible {
             return "/getFavList"
         case.favUser:
             return "/favUser"
+        case .join_LeftChatroom:
+            return "/joinChatroom"
         }
     }
     
@@ -73,6 +78,8 @@ enum APIRouter : URLRequestConvertible {
         case .getFavList(let id):
             return ["id":id]
         case.favUser:
+            return nil
+        case .join_LeftChatroom:
             return nil
         }
     }
@@ -93,6 +100,8 @@ enum APIRouter : URLRequestConvertible {
             return nil
         case.favUser(let leftID, let rightID):
             return ["leftID":leftID,"rightID":rightID]
+        case .join_LeftChatroom(let id, let isJoined):
+            return ["id":id,"isJoined":isJoined]
         }
     }
     

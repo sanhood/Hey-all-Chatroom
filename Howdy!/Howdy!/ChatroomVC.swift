@@ -38,6 +38,7 @@ class ChatroomVC: ParentVC {
         headTitle.text = chatroom.name
 //        self.socket = manager.defaultSocket
         self.setSocketEvents()
+        self.sendJoin_LeftSignal(isJoined: true)
 //        AppDelegate.socket.connect()
     }
     
@@ -68,10 +69,24 @@ class ChatroomVC: ParentVC {
 //        UIApplication.shared.statusBarStyle = .default
     }
     
+    func sendJoin_LeftSignal(isJoined:Bool){
+        Network.request(serverMethod: .join_LeftChatroom(id: chatroom.id, isJoined: isJoined)) { (response) in
+            if response.status != 200{
+                //error alert
+            }
+        }
+    }
+    
     override func headerViewRightBtnPressed() {
         let vc = FriendListVC(nibName: "FriendListVC", bundle: nil)
         vc.inInviteMode = true
+        vc.chatroomToInvite = self.chatroom
         nvc.pushViewController(vc, animated: true)
+    }
+    
+    override func headerViewleftBtnPressed() {
+        self.sendJoin_LeftSignal(isJoined: false)
+        nvc.popViewController(animated: true)
     }
     
     func makeSamePersonsSections(){
